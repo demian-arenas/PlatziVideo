@@ -3,9 +3,14 @@ import PropTypes from "prop-types";
 import './media.css'
 
 class Media extends Component {
+
+  handleClick = (event) => {
+    console.log(event)
+  }
+
   render() {
     return (
-      <div className="Media">
+      <div className="Media" onClick={this.handleClick} >
         <div className="Media-cover">
           <img
             src={this.props.image}
