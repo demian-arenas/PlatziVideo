@@ -8,10 +8,13 @@ const initialState = fromJS({
 const modal = (state = initialState, { type, payload }) => {
   switch (type) {
     case "OPEN_MODAL":
-      return state
+      return state.merge({
+        visibility: true,
+        mediaId: payload.mediaId
+      })
       break;
     case 'CLOSE_MODAL': 
-      return state
+      return state.set('visibility', false)
       break;
     default:
       return state;
