@@ -56,8 +56,9 @@ class Home extends Component {
 }
 
 const mapStateToProps = (state, props) => {
+  const categories = state.data.categories.map((categoryId) => state.data.entities.categories[categoryId])
   return {
-    categories: state.data.categories,
+    categories,
     search: state.search
   }
 }
