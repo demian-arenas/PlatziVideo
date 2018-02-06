@@ -23,7 +23,7 @@ const homeContainer = document.getElementById("home-container");
 
 render(
   <Provider store={store}>
-    <Home data={data} />
+    <Home />
   </Provider>,
   homeContainer
 );
