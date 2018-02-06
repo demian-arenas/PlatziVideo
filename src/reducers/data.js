@@ -9,9 +9,10 @@ const initialState = fromJS({
 
 const data = (state = initialState, { type, payload}) => {
   switch (type) {
-    case "SEARCH_VIDEO": {
-      return state.set('search', payload.query)
-    }
+    case "SEARCH_ENTITIES":
+      {
+        return state.set("search", payload.query);
+      }
       break;
     default:
       return state;
