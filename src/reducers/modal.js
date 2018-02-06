@@ -1,7 +1,9 @@
-const initialState = {
+import { fromJS } from 'immutable'
+
+const initialState = fromJS({
   visibility: false,
   mediaId: null
-};
+})
 
 const modal = (state = initialState, { type, payload }) => {
   switch (type) {
