@@ -1,16 +1,13 @@
 const data = (state, { type, payload}) => {
   switch (type) {
     case "SEARCH_VIDEO": {
-      const results = state.data.categories
-      .map(category => category.playlist.filter(item => {
-        const author = item.author.toLowerCase();
-        const query = payload.query.toLowerCase();
-        return author.includes(query)
-      }))
-      .filter(category => {
-        if (category.length > 0) return category
-      })
-      
+      const results = []
+
+      if (payload.query) {
+        state.data.categories
+        .map(category => category.playlist.filter(item => item.author.toLowerCase().includes(payload.query.toLowerCase()) && results.push(item)
+        ))
+      }
 
       return {
         ...state,
