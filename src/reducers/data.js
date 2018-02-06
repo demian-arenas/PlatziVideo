@@ -1,11 +1,12 @@
 const data = (state, action) => {
   switch (action.type) {
-    case 'something': {
-      return state
-    }
-    break;
+    case "SEARCH_VIDEO":
+      {
+        return state;
+      }
+      break;
     default:
-      return state
+      return state;
   }
 }
 
