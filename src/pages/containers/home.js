@@ -26,6 +26,7 @@ class Home extends Component {
         <HomeLayout>
           <Related />
           <Categories
+            isLoading={this.props.isLoading}
             categories={this.props.categories}
             handleOpenModal={this.handleOpenModal}
             search={this.props.search}
@@ -64,7 +65,8 @@ const mapStateToProps = (state, props) => {
   return {
     categories,
     search: searchResults,
-    modal: state.get('modal')
+    modal: state.get('modal'),
+    isLoading: state.get('isLoading').get('active')
   }
 }
 
