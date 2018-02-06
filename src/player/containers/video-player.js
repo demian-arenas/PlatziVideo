@@ -16,8 +16,8 @@ class VideoPlayer extends Component {
     pause: true,
     duration: 0,
     currentTime: 0,
-    durationTimer: 0,
-    currentTimeTimer: 0,
+    durationTimer: '00:00',
+    currentTimeTimer: '00:00',
     loading: true
   };
   togglePlay = event => {
@@ -87,7 +87,7 @@ class VideoPlayer extends Component {
       <VideoPlayerLayout
         setRef={this.setRef}
       >
-        <Title title="Esto es un video chido!" />
+        <Title title={this.props.title} />
         <Controls>
           <PlayPause pause={this.state.pause} handleClick={this.togglePlay} />
           <Timer
@@ -112,7 +112,7 @@ class VideoPlayer extends Component {
           handleReady={this.handleReady}
           pause={this.state.pause}
           autoplay={this.props.autoplay}
-          src="http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
+          src={this.props.src}
         />
       </VideoPlayerLayout>
     );
