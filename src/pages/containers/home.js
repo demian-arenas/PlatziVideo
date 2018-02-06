@@ -59,7 +59,7 @@ const mapStateToProps = (state, props) => {
   const categories = state.data.categories.map((categoryId) => state.data.entities.categories[categoryId])
   return {
     categories,
-    search: state.search
+    search: state.data.search
   }
 }
 

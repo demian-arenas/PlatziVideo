@@ -1,4 +1,12 @@
-const data = (state, { type, payload}) => {
+import schema from "../schemas";
+
+const initialState = {
+  entities: schema.entities,
+  categories: schema.result.categories,
+  search: [],
+};
+
+const data = (state = initialState, { type, payload}) => {
   switch (type) {
     case "SEARCH_VIDEO": {
       const results = []
