@@ -8,6 +8,7 @@ function Categories(props) {
       {props.categories.map(item => {
         return (
           <Category
+            handleOpenModal={props.handleOpenModal}
             key={item.id}
             {...item}
           />
